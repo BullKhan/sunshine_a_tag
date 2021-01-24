@@ -90,11 +90,11 @@ body { font-family: 'Nanum Gothic', sans-serif; }
 #section .article:nth-child(2) .icon:first-child {margin-left: 10%;}
 #section .article:nth-child(2) .icon:last-child {margin-right: 10%;}
 
-#section .article:nth-child(2) .icon div:nth-child(1) {
+#section .article:nth-child(2) .icon > a > div {
     background: #323232; width: 170px; height: 170px;
     margin: 0 auto; border-radius: 50%; transition: all 0.5s;
 }
-#section .article:nth-child(2) .icon div:nth-child(1):hover { background: red; }
+#section .article:nth-child(2) .icon > a > div:hover { background: red; }
 
 #section .article:nth-child(2) .icon > .text > h3 { 
     font-size: 17px; padding-top: 35px; color: #424242; font-weight: bold;
@@ -106,7 +106,7 @@ body { font-family: 'Nanum Gothic', sans-serif; }
 #section .article:nth-child(2) .icon:nth-child(2) > .text > p {
     letter-spacing: -0.5px;
 }
-#section .article:nth-child(2) .icon > a {
+#section .article:nth-child(2) .icon > a:last-child {
     font-size: 12px; color: #1e1e1e; padding: 10px 46px;
     border:1px solid #1e1e1e;
     display: inline-block;
