@@ -13,7 +13,7 @@ body { font-family: 'Nanum Gothic', sans-serif; }
     min-width: 100%; background: #fff;
 }
 #header div > h1 { float:left; margin: 20px 0 20px 50px; }
-.nav .depth1 { float:right; width:70%; }
+.nav { float:right; width:70%; }
 .nav .depth1 > li {
     float: left; width:20%; margin-top: 20px;
     font-weight: bold; font-size: 17px; color: #555; text-align: center;
@@ -21,13 +21,18 @@ body { font-family: 'Nanum Gothic', sans-serif; }
 }
 .nav .depth1 > li > a { display: block; padding: 26px 40px; }
 .nav .depth1 > li .depth2 {
-    position: absolute; left:50%;
+    position: absolute; left:50%; top:100%;
     width: 250px; transform: translateX(-50%);
-    opacity: 0; transition: all 0.4s; margin: -40px 0; /* <-- 내려오게하기...*/
+    height: 0; overflow: hidden; /* <-- 내려오게하기...*/
+    transition: all 0.4s;
 }
-.nav .depth1 > li:hover .depth2 {
-    top:100%; z-index: 99; opacity: 1; margin: 0;
-}
+
+.nav .depth1 > li:nth-child(1):hover .depth2 { height: 84px; }
+.nav .depth1 > li:nth-child(2):hover .depth2 { height: 84px; }
+.nav .depth1 > li:nth-child(3):hover .depth2 { height: 42px; }
+.nav .depth1 > li:nth-child(4):hover .depth2 { height: 42px; }
+.nav .depth1 > li:nth-child(5):hover .depth2 { height: 126px; }
+
 .nav .depth1 .depth2 a { 
     display: block; padding: 15px 0; font-size: 12px; background: #fff;
 }
@@ -40,20 +45,24 @@ body { font-family: 'Nanum Gothic', sans-serif; }
     position: relative; font-family: 'Gothic A1', sans-serif 
 }
 #section .article:nth-child(1) .slide1 {
-    height: 720px;
-    background: url(../img/main01.jpg);
+    height: 750px;
+    background: url(../img/main01.jpg) no-repeat center; 
+    background-size: cover;
 }
 #section .article:nth-child(1) .slide2 {
-    height: 720px;
-    background: url(../img/main02.jpg);
+    height: 750px;
+    background: url(../img/main02.jpg) no-repeat center; 
+    background-size: cover;
 }
 #section .article:nth-child(1) .slide3 {
-    height: 720px;
-    background: url(../img/main03.jpg);
+    height: 750px;
+    background: url(../img/main03.jpg) no-repeat center; 
+    background-size: cover;
 }
 #section .article:nth-child(1) .slide4 {
-    height: 720px;
-    background: url(../img/main04.jpg);
+    height: 750px;
+    background: url(../img/main04.jpg) no-repeat center; 
+    background-size: cover;
 }
 #section .article:nth-child(1) .slide .slidetxt {
     position: absolute; top:50%; left:50%;
@@ -90,12 +99,27 @@ body { font-family: 'Nanum Gothic', sans-serif; }
 #section .article:nth-child(2) .icon:first-child {margin-left: 10%;}
 #section .article:nth-child(2) .icon:last-child {margin-right: 10%;}
 
+/* ** a 태그 정사각형, 호버 원 안 ** */
 #section .article:nth-child(2) .icon > a > div {
-    background: #323232; width: 170px; height: 170px;
+    background: #323232; display: inline-block;
     margin: 0 auto; border-radius: 50%; transition: all 0.5s;
+    overflow: hidden;
 }
 #section .article:nth-child(2) .icon > a > div:hover { background: red; }
+/* 
+<div>
+	<a href="#none">
+		<img src="" alt="">
+	</a>
+</div>
 
+div {
+    display: inline-block; background: #323232; border-radius: 50%;
+    transition: all 0.3s ease-out; overflow: hidden; }
+div:hover { 
+    background: #fe0000; transition: all 0.3s ease-in; }
+ ** 원안에서 a태그, 호버 적용 **
+*/
 #section .article:nth-child(2) .icon > .text > h3 { 
     font-size: 17px; padding-top: 35px; color: #424242; font-weight: bold;
 }
@@ -203,3 +227,15 @@ body { font-family: 'Nanum Gothic', sans-serif; }
 }
 #footer .detail { line-height: 1.5;}
 #footer .copy p {padding: 10px 0;}
+
+.gotop a {
+    position: fixed;
+    bottom: 15%; right: 10%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+    display: inline-block;
+    width: 42px; height: 42px;
+    text-align: center; line-height: 42px;
+    font-size: 12px;
+}
+.gotop a:hover {background: orange;}
