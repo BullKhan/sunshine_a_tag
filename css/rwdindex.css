@@ -1,8 +1,15 @@
+@media screen and (max-width:1100px){
+
+}
+
 @media screen and (max-width:1024px){
+
+    #header div > h1 { float:left; margin: 20px 0 20px 30px; }
+
     #header .opcl { 
         display: block;
         background: none; border: none;
-        position: absolute; right:5%;
+        position: absolute; right:30px;
         top:45.5px; transform: translateY(-50%);
         width:22px; height:18px;
     }
@@ -65,10 +72,99 @@
         height: 0; overflow: hidden; /* <-- 내려오게하기...*/
         transition: all 0.4s;
     }
+    .nav .depth1 > li.on .depth2 { height: auto; }
+
     .nav .depth1 .depth2 > li > a {
         /* 하단 COPY 부분 */
         display: block; padding: 15px 30px; font-size: 12px; background: #fff;
     }
     
+    /* 슬릭슬라이드 */
+    /* 원형 버튼 */
+    #section .article1 .slide_group .slick-dots {
+        position: absolute; bottom:50px; left:50%; transform: translateX(-50%);
+    }
+    #section .article1 .slide_group .slick-dots li { 
+        display: inline-block; margin: 0 5px;
+        width:auto; height: auto; background: none;
+        position: relative;
+    }
+    #section .article1 .slide_group .slick-dots li button {
+        position: static; top:50%; left:0; transform: translateY(0%);
+        width: 20px; height: 20px; border-radius: 20px;
+        background: rgba(0,0,0,0.8); border: none;
+        text-indent: -9999px; overflow: hidden; outline: none;
+    }
+    #section .article1 .slide_group .slick-dots li.slick-active button {
+        animation: none 3s both; background: rgba(255,255,255,0.9);
+    }
+    /* 슬라이드 자동재생/멈춤 버튼 */
+    #section .article1 { position: relative; }
+    #section .article1 .plpa {
+        position: absolute; bottom:50px; left:50%; outline: none;
+        transform: translate(70px) translateY(0%) scale(1.5);
+        color: #fff; background: none; border: none;
+    }
+
+    #section .article2 .icon { 
+        float: left; width: 50%;
+        padding: 10px 20px;  
+    }
+    #section .article2 .icon:first-child {margin-left: 0%;}
+    #section .article2 .icon:last-child {margin-right: 0%;}
+
+} /* @media screen and (max-width:1024px) end */
+
+@media screen and (max-width:575px){
+    .article4 .title span.hide { display: none; }
+    .article4 .title span { display: block; }
+}
+@media screen and (max-width:545px){
+    #footer .detail > p:first-child span.hide { display: none; }
+    #footer .detail > p:first-child span { display: block; }
+}
+@media screen and (max-width:506px){
+    .title span { display: block; }
 }
 
+@media screen and (max-width:500px){
+
+    #section .article1 .slide_group .slide .slidetxt h2 {
+        font-size: 25px; font-family: 'Gothic A1', sans-serif;
+        margin-bottom: 20px; font-weight: bold;
+    }
+
+    #section .article2 .icon { 
+        float: left; width: 100%;
+        padding: 10px 20px;  
+    }
+    #section .article2 .icon:first-child {margin-left: 0%;}
+    #section .article2 .icon:last-child {margin-right: 0%;}
+
+    #section .article3 { 
+        background: url(../img/bg_business.jpg) no-repeat center;
+        background-size: cover; height: auto;
+        text-align: center; color: #fff;
+        padding-bottom: 50px;
+    }
+    #section .article3 .banner_wrap > div {
+        float: left; width: 100%;
+        /* border: 1px solid red; */
+    }
+    #section .article3 .banner_wrap > div:nth-child(2) { margin: 0 0%; }
+    #section .article3 .banner_wrap .imgbox img {
+        transition: all 0.5s; width:100%;
+    }
+    #section .article3 .banner_wrap .banner { padding-top: 10px; }
+
+    /* footer 구역 */
+    #footer .detail > p:last-child span.hide { display: none; }
+    #footer .detail > p:last-child span { display: block; }
+    #footer a {
+        display: block; font-size: 13px; color: #ccc; 
+        background: #444; padding: 10px 0;
+        border: 1px solid #888;
+    }
+    #footer li { display: block; margin:5px 5px; font-weight: bold; }
+
+} /* @media screen and (max-width:500px) end */

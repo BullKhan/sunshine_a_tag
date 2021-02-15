@@ -8,17 +8,17 @@ body { font-family: 'Nanum Gothic', sans-serif; }
 .inner_row{ max-width: 1000px; margin: 0 auto; padding: 0 10px;}
 
 /* header 구역 - 1 aritlcle 회사소개  */
-#header .hwrap { 
-    z-index: 99999; border-bottom: 1px solid #ddd; 
-    position: fixed; top:0; left:0; right:0;
+#header.on {
+    position: fixed; width:100%; top:0; left:0; z-index: 99999;
     min-width: 100%; background: #fff;
+    border-bottom: 1px solid #ddd;
 }
 #header .hwrap > div { position: relative; }
 #header div > h1 { float:left; margin: 20px 0 20px 50px; }
 #header .opcl { display: none; }
-.nav { float:right; width:70%; }
+.nav { float:right; }
 .nav .depth1 > li {
-    float: left; width:20%; margin-top: 20px;
+    float: left; width:140px; margin-top: 20px;
     position: relative; text-align: center
 }
 .nav .depth1 > li > a { 
@@ -30,7 +30,7 @@ body { font-family: 'Nanum Gothic', sans-serif; }
     position: absolute; left:50%; top:100%;
     width: 250px; transform: translateX(-50%);
     height: 0; overflow: hidden; /* <-- 내려오게하기...*/
-    transition: all 0.4s;
+    transition: all 0.4s; z-index: 99999;
 }
 .nav .depth1 > li:nth-child(1).on .depth2 { height: 84px; }
 .nav .depth1 > li:nth-child(2).on .depth2 { height: 84px; }
@@ -45,7 +45,7 @@ body { font-family: 'Nanum Gothic', sans-serif; }
 
 
 /* section 구역 - 1 aritlcle 회사소개  */
-#section { margin-top: 91px; }
+/* #section { margin-top: 91px; } */
 #section .article1 .slide_group { position: relative; }
 #section .article1 .slide_group .slick-arrow {
     position: absolute; 
@@ -98,14 +98,12 @@ body { font-family: 'Nanum Gothic', sans-serif; }
     color: #fff; background: none; border: none;
 }
 
-
-
 #section .article1 .slide_group > div {
     font-family: 'Gothic A1', sans-serif; 
 }
 #section .article1 .slide_group .slide .slidetxt {
-    position: absolute; top:50%; left:50%;
-    transform: translate(-50%, -50%);
+    position: absolute; top:50%; left:0%; right:0%;
+    transform: translateY(0%, -50%);
     color:#fff; text-align: center;
     font-size: 17px; line-height: 1.5;
     text-shadow: 1px 1px 5px #555;
@@ -260,7 +258,7 @@ div:hover {
 #section .article3 .banner_wrap > div > div h4 {
     font-size: 14px; font-weight: bold; padding: 30px 0 20px;
 }
-#section .article3 .banner_wrap > div > div > p{
+#section .article3 .banner_wrap > div > div > p {
     font-size: 13px; padding: 0 28px 30px 28px; line-height: 1.5;
 }
 
