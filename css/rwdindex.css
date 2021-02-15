@@ -50,6 +50,7 @@
         top:100%; right:0;
         padding: 10px 0px 0px;
         display: none;
+        z-index: 999;
         /* 하단 COPY 부분 */
         float:none; width:200px;
     }
