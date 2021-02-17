@@ -1,6 +1,6 @@
 $(".article1 .slide_group").slick({
     autoplay: true, // 자동재생
-    autoplaySpeed: 3000, // 간격시간[단위:ms]
+    autoplaySpeed: 5000, // 간격시간[단위:ms]
     dots: true, // 번호 버튼 나타낼 여부
     speed: 600, // 바뀌는시간(*생략가능)
     slidesToShow: 1, // 보여질슬라이드수(*생략가능)
@@ -10,7 +10,7 @@ $(".article1 .slide_group").slick({
     pauseOnFocus: false, // 동그라미번호버튼 클릭시 자동실행 멈춤여부
     cssEase: 'linear', // 속도함수(*생략가능)
     draggable: true, // 마우스드래그시 슬라이드 교체가능여부(*생략가능)
-    fade: false, // 페이드효과 여부, 안주면 우좌로 슬라이드 이동(*생략가능)
+    fade: true, // 페이드효과 여부, 안주면 우좌로 슬라이드 이동(*생략가능)
     arrows: true, // 좌우화살표 사용여부(*생략가능)
     prevArrow: '<button class="prev"><i class="fas fa-angle-left"></i></button>',
     nextArrow: '<button class="next"><i class="fas fa-angle-right"></i></button>',
@@ -18,9 +18,6 @@ $(".article1 .slide_group").slick({
         breakpoint: 1025,
         settings: {
             arrows: false,
-            // slidesToShow: 1, // 보여질슬라이드수(생략가능)    
-            // centerMode: true,
-            // centerPadding: "100px",
         }
     }]
 })
@@ -39,6 +36,37 @@ elPlaystop.addEventListener('click', function(){
         ibtn[0].classList.add('fa-pause');
     }
 })
+
+// 미니 슬라이드
+$(".article5 .slide_group_b").slick({
+    autoplay: true, // 자동재생
+    autoplaySpeed: 3000, // 간격시간[단위:ms]
+    dots: false, // 번호 버튼 나타낼 여부
+    speed: 600, // 바뀌는시간(*생략가능)
+    slidesToShow: 3, // 보여질슬라이드수(*생략가능)
+    slidesToScroll: 1, // 이동슬라이드수(*생략가능)
+    cssEase: 'linear', // 속도함수(*생략가능)
+    arrows: true, // 좌우화살표 사용여부(*생략가능)
+    prevArrow: '<button class="prev"><i class="fas fa-angle-left"></i></button>',
+    nextArrow: '<button class="next"><i class="fas fa-angle-right"></i></button>',
+    centerMode: true,
+    centerPadding:"100px", // 좌우측 끝에 보여지는 그림 크기
+    responsive: [{
+        breakpoint: 1025,
+        settings: {
+            slidesToShow: 1,
+            centerPadding:"150px",
+        }
+    },
+    {
+        breakpoint: 501,
+        settings: {
+            slidesToShow: 1,
+            centerMode: false,
+        }
+    }]
+})
+
 
 $('#header .opcl').on('click',function(){
     $(this).toggleClass('on')
@@ -106,3 +134,43 @@ $(window).on('scroll', function(){
         $('#header').removeClass('on')
     }
 })
+
+// article 6 - 필터 갤러리
+// JS버전
+var elLia = document.querySelectorAll('.title > li > a');
+var elImg = document.querySelectorAll('.cont > img')
+
+for (var i=0; i<elLia.length; i++) {
+    elLia[i].addEventListener('click', function(e){
+        e.preventDefault();
+        var href = this.getAttribute('href');
+        filter(href);
+    })
+}
+function filter(standard){
+    for(var j=0; j<elImg.length; j++) {
+        if( elImg[j].classList.contains(standard) ) {
+            elImg[j].style.display = 'block';
+            elImg[j].classList.add('active');
+        } else {
+            elImg[j].classList.remove('active');
+            elImg[j].style.display = 'none';
+        }
+    }
+}
+
+
+// JQuery
+// var href;
+// $('.article6 .title a').on('click', function(e){
+//     e.preventDefault();
+//     href = $(this).attr('href');
+//     $('.cont img').each(function(){
+//         if( $(this).hasClass(href) ) {
+//             $(this).css({ display:'block' })
+//             $(this).addClass('active')
+//         } else {
+//             $(this).removeClass('active').css({ display:'none' })
+//         }
+//     })
+// })

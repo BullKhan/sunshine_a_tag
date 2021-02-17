@@ -1,6 +1,4 @@
-@media screen and (max-width:1100px){
 
-}
 
 @media screen and (max-width:1024px){
 
@@ -114,6 +112,8 @@
     #section .article2 .icon:first-child {margin-left: 0%;}
     #section .article2 .icon:last-child {margin-right: 0%;}
 
+    .article6 .cont img { float:left; width:33.33%; padding:10px; }
+
 } /* @media screen and (max-width:1024px) end */
 
 @media screen and (max-width:575px){
@@ -157,6 +157,8 @@
         transition: all 0.5s; width:100%;
     }
     #section .article3 .banner_wrap .banner { padding-top: 10px; }
+
+    .article6 .cont img { float:left; width:50%; padding:10px; }
 
     /* footer 구역 */
     #footer .detail > p:last-child span.hide { display: none; }
